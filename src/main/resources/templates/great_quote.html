@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        .image_phrases {
+            width: 500px;
+            height: 750px;
+        }
+    </style>
     <meta charset="UTF-8">
   <title>Великие фразы</title>
 </head>
 <body>
-  <h1><span th:text="${id}"></span>-ая фраза</h1>
+  <h1><span th:text="${id}">id</span>-ая фраза</h1>
     <p >"<span th:text="${phrase}"></span>" - <span th:text="${person}"></span></p>
-    <img alt="Image" th:src="${image}"/>
+    <img class="image_phrases" th:src="${href}" alt="Not found image">
 </body>
 </html>

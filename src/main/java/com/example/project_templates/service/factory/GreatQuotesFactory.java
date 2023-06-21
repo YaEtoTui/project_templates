@@ -10,6 +10,7 @@ import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.experimental.FieldDefaults;
+import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
@@ -51,7 +52,7 @@ public class GreatQuotesFactory {
         model.addAttribute("id", greatQuotes.getId());
         model.addAttribute("person", greatQuotes.getPerson());
         model.addAttribute("phrase", greatQuotes.getPhrase());
-        model.addAttribute("image", greatQuotes.getPathImage());
+        model.addAttribute("href", "http://localhost:8080/api/admin/image/" + greatQuotes.getId());
         return "great_quote";
     }
 
