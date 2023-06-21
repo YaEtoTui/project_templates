@@ -10,7 +10,6 @@ import com.example.project_templates.service.factory.GreatQuotesFactory;
 import jakarta.transaction.Transactional;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
 import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
