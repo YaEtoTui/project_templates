@@ -9,4 +9,6 @@ public interface GreatQuotesService {
     GreatQuotesResponse createPhrase(CreateGreatQuotesRequest request);
 
     String showPersonPhrase(Model model, Long id);
+
+    String showPersonPhraseAll(Model model);
 }

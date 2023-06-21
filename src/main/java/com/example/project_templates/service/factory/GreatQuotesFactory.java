@@ -12,6 +12,8 @@ import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 
+import java.util.List;
+
 @Component
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @RequiredArgsConstructor
@@ -43,5 +45,11 @@ public class GreatQuotesFactory {
         model.addAttribute("person", greatQuotes.getPerson());
         model.addAttribute("phrase", greatQuotes.getPhrase());
         return "great_quote";
+    }
+
+    public String showGreatQuotesAll(Model model) {
+        List<GreatQuotes> greatQuotesList = greatQuotesRepository.findAll();
+        model.addAttribute("list_great_quotes", greatQuotesList);
+        return "list_great_quotes";
     }
 }

@@ -34,4 +34,9 @@ public class GreatQuotesServiceImpl implements GreatQuotesService {
     public String showPersonPhrase(Model model, Long id) {
         return greatQuotesFactory.showGreatQuote(model, id);
     }
+
+    @Override
+    public String showPersonPhraseAll(Model model) {
+        return greatQuotesFactory.showGreatQuotesAll(model);
+    }
 }

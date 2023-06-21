@@ -35,4 +35,9 @@ public class SampleMVCController {
     public String showPersonPhrase(Model model, @PathVariable("id") long id) {
         return greatQuotesService.showPersonPhrase(model, id);
     }
+
+    @GetMapping("/sample/person/phrase/all")
+    public String showPersonPhraseAll(Model model) {
+        return greatQuotesService.showPersonPhraseAll(model);
+    }
 }

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<table>
+<head>
+    <meta charset="UTF-8">
+    <title>Список всех цитат в БД</title>
+</head>
+<body>
+    <h1>Список всех цитат в БД</h1>
+        <tr th:each="great_quote : ${list_great_quotes}">
+            <td> "<span th:text="${great_quote.phrase}"> Phrase </span>" - <span th:text="${great_quote.person}"> Person </span> </td>
+        </tr>
+</body>
+</table>
+</html>
