@@ -10,9 +10,13 @@ import com.example.project_templates.service.factory.GreatQuotesFactory;
 import jakarta.transaction.Transactional;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.nio.file.Path;
 
 @Service
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
@@ -38,5 +42,11 @@ public class GreatQuotesServiceImpl implements GreatQuotesService {
     @Override
     public String showPersonPhraseAll(Model model) {
         return greatQuotesFactory.showGreatQuotesAll(model);
+    }
+
+    @Override
+    public String addImage(Long id, MultipartFile image) {
+        Path pathImage = greatQuotesFactory.addImageInFileSystem(image);
+        return greatQuotesFactory.saveInDBPath(id, pathImage);
     }
 }

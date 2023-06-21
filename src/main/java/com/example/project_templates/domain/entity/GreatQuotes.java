@@ -8,6 +8,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.nio.file.Path;
+
 @Entity
 @Getter
 @Setter
@@ -17,9 +19,17 @@ import lombok.Setter;
 public class GreatQuotes extends BaseDomainEntity{
     String person;
     String phrase;
+    String pathImage;
 
     public GreatQuotes(GreatQuotesContext context) {
         person = context.getPerson();
         phrase = context.getPhrase();
+    }
+
+    public GreatQuotes(GreatQuotes greatQuotes, Path path) {
+        id = greatQuotes.getId();
+        person = greatQuotes.getPerson();
+        phrase = greatQuotes.getPhrase();
+        pathImage = path.toString();
     }
 }
